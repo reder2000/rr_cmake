@@ -53,3 +53,8 @@ install(FILES "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
 
 
 install(DIRECTORY rr_cmake/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/rr_cmake)
+
+# check includes
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
+include(rr_cmake/FindVcpkInstall)
+include(rr_cmake/cxx20)
