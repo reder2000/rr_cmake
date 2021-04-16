@@ -30,9 +30,10 @@ function (fetch_cache_archive libname archive_name url_prefix result_srcdir)
     #    EXCLUDE_FROM_ALL TRUE
     #    )
 
-    SET(${result_srcdir} ${dst_dir} PARENT_SCOPE)
-
+    
     ENDIF()
+
+    SET(${result_srcdir} ${dst_dir} PARENT_SCOPE)
 
 
 endfunction()
