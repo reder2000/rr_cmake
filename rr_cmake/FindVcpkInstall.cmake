@@ -19,7 +19,7 @@ function(find_vcpkg_install_missing pkg_name) #vcpkg_name
             endif()
             execute_process(COMMAND "${vcpkg_exe}" "install" "${vcpkg_name}" RESULT_VARIABLE res)
             if (NOT ${res} EQUAL 0)
-                message(FATAL_ERROR "vcpkg failed with result {res}")
+                message(FATAL_ERROR "${vcpkg_exe} install ${vcpkg_name} failed with result ${res}")
             endif()
             find_package(${pkg_name} CONFIG REQUIRED)
         endif()
