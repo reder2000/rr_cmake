@@ -12,4 +12,12 @@ function (find_blpapi)
     message("find_package(blpapi PATHS ${blpapi_srcdir}/cmake REQUIRED")
     find_package(blpapi PATHS "${blpapi_srcdir}/cmake" REQUIRED)
 
+    if (MSVC)
+        set(toto blpapi)
+    else () # linux cmake .so relative path problem
+        get_property(toto TARGET blpapi PROPERTY IMPORTED_LOCATION)
+    endif()
+
+    set(blpapi_target ${toto} PARENT_SCOPE)
+
 endfunction()
