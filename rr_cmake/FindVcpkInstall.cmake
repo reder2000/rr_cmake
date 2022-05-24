@@ -22,7 +22,7 @@ endfunction()
 # an optional argument can be passed to specify the package name
 # when it is not the same as the include name
 
-function(find_vcpkg_install_missing pkg_name) 
+macro(find_vcpkg_install_missing pkg_name) 
     find_package(${pkg_name} CONFIG QUIET)
     if (${${pkg_name}_FOUND})
         message("find_vcpkg_install_missing ${pkg_name} found")
@@ -39,12 +39,12 @@ function(find_vcpkg_install_missing pkg_name)
             find_package(${pkg_name} CONFIG REQUIRED)
         endif()
     endif()
-endfunction()
+endmacro()
 
 # find and install if necessary header only boost-pkg_name
 # boost/test_file is looked for to test if the package is installed
 
-function(boost_header_only_package pkg_name test_file)
+macro(boost_header_only_package pkg_name test_file)
     find_package(Boost)
     if(Boost_FOUND)
       include_directories(${Boost_INCLUDE_DIRS})
@@ -59,9 +59,9 @@ function(boost_header_only_package pkg_name test_file)
       find_package(Boost)
       include_directories(${Boost_INCLUDE_DIRS})
     endif(Boost_FOUND)
-endfunction()
+endmacro()
 
-function(boost_package pkg_name)
+macro(boost_package pkg_name)
     find_package(Boost COMPONENTS ${pkg_name})
     if(Boost_FOUND)
       include_directories(${Boost_INCLUDE_DIRS})
@@ -71,4 +71,4 @@ function(boost_package pkg_name)
       find_package(Boost COMPONENTS  pkg_name)
       include_directories(${Boost_INCLUDE_DIRS})
     endif(Boost_FOUND)
-endfunction()
+endmacro()
