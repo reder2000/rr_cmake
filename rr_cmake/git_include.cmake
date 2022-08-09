@@ -18,5 +18,5 @@ function (git_include package_name git_repository ) # optional include_dir
 		include_directories(${${package_name}_SOURCE_DIR}/${ARGV2})
 	endif ()
 	# for config
-	include_directories(${${package_name}_BINARY_DIR}})
+	include_directories(${${package_name}_BINARY_DIR})
 endfunction()
