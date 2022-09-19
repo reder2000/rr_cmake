@@ -49,7 +49,7 @@ endmacro()
 # boost/test_file is looked for to test if the package is installed
 
 macro(boost_header_only_package pkg_name test_file)
-    find_package(Boost)
+    find_package(Boost 1.79)
     if(Boost_FOUND)
       include_directories(${Boost_INCLUDE_DIRS})
       if (NOT EXISTS "${Boost_INCLUDE_DIRS}/boost/${test_file}")
@@ -66,7 +66,7 @@ macro(boost_header_only_package pkg_name test_file)
 endmacro()
 
 macro(boost_package pkg_name)
-    find_package(Boost COMPONENTS ${pkg_name})
+    find_package(Boost 1.79 COMPONENTS ${pkg_name})
     if(Boost_FOUND)
       include_directories(${Boost_INCLUDE_DIRS})
     else()
