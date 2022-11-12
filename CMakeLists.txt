@@ -8,6 +8,10 @@ include(GNUInstallDirs)
 FILE(GLOB_RECURSE cmakefiles CONFIGURE_DEPENDS rr_cmake/*.cmake)
 source_group("cmakefiles" FILES ${cmakefiles})
 
+#include(${CMAKE_SOURCE_DIR}/rr_cmake/git_include.cmake)
+#git_includee(my_package https://mygithub/exmaple.git BRANCH dev SOURCEDIR mydir)
+#git_includee(my_package https://mygithub/exmaple.git)
+
 # define a header-only library
 add_library(rr_cmake INTERFACE  ${cmakefiles} README.md)
 add_library(rr_cmake::rr_cmake ALIAS rr_cmake)
