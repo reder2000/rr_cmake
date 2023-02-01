@@ -1,0 +1,5 @@
+function (visual_enable_parallel_compile)
+if (MSVC)
+configure_file(${rr_cmake_SOURCE_DIR}/rr_cmake/Directory.Build.props.in Directory.Build.props COPYONLY)
+endif(MSVC)
+endfunction()
