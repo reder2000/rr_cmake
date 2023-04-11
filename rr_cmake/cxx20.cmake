@@ -6,7 +6,7 @@ add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/Zc:preprocessor>)
 add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/wd5105>)
 
 
-if (MSVC)
+if (WIN32)
 add_definitions(-DNOMINMAX)
 add_definitions(-DWIN32_LEAN_AND_MEAN)
 endif ()
