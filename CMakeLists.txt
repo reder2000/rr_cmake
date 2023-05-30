@@ -13,7 +13,7 @@ source_group("cmakefiles" FILES ${cmakefiles})
 #git_includee(my_package https://mygithub/exmaple.git)
 
 # define a header-only library
-add_library(rr_cmake INTERFACE  ${cmakefiles} README.md)
+add_library(rr_cmake INTERFACE  ${cmakefiles} README.md .gitignore)
 add_library(rr_cmake::rr_cmake ALIAS rr_cmake)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
