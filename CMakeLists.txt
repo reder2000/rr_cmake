@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.30)
 project("rr_cmake" VERSION 1.0.1
              DESCRIPTION "cmake macros"
              HOMEPAGE_URL "https://github.com/reder2000/rr_cmake")
